@@ -24,17 +24,30 @@ $servicesOut:$blue2;
 }
 
 .gv-trip-chart {
-    transform-origin: 40% 50%;
     transition: transform 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 
 .gv-interactive {
 
+    .gv-context-chart {
+        height:100px;
+        width:100px;
 
+        .gv-inner {
+            background-color: $red1;
+        }
+
+        .gv-outer {
+            height: 100%;
+            width: 100%;
+            background-color: grey;
+        }
+    }
+    
     .gv-fulcrum {
         font-size: larger;
-        left: 39%;
+        left: calc(50% - 6.5px);
         position: absolute;
         margin-top: -10px;
     }
@@ -45,14 +58,16 @@ $servicesOut:$blue2;
         width: 100%;
 
         .gv-chart-wrapper {
-            width:40%;
+            width:50%;
             display: inline-block;
+            margin: 0px;
         }
 
 
         .gv-bar {
             display: block;
             height: 12px;
+            margin: 0px;
 
             &.gv-imports {
                 background-color:$exports;
