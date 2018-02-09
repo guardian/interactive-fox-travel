@@ -22,7 +22,15 @@ $servicesOut:$blue2;
 .interactive-atom {
     margin: 0 !important;
 }
+
+.gv-trip-chart {
+    transform-origin: 40% 50%;
+    transition: transform 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
 .gv-interactive {
+
 
     .gv-fulcrum {
         font-size: larger;
