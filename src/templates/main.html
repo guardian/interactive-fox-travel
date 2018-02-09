@@ -1,3 +1,23 @@
 <div class="gv-interactive">
+	{{#trips}}
+	<div class="gv-trip">
+		<h3>{{country}}</h3>
+		<div class="gv-date">{{start}}</div>
+		<div class="gv-reason">{{reason}}</div>
+		<div class="gv-trip-chart-wrapper">
+			<div class="gv-trip-chart" style="transform:rotate({{inclination}})" data-angle={{inclination}}>
+				<div class="gv-chart-wrapper gv-left">
+					<div class="gv-bar gv-imports" style="width:{{iwidth}}"></div>
+				</div>
+				<div class="gv-chart-wrapper gv-right">
+					<div class="gv-bar gv-exports" style="width:{{ewidth}}"></div>
+				</div>
+			</div>
+		</div>
+		<div class="gv-fulcrum">Δ</div>
+	</div>
 	
+
+	{{/trips}}
+
 </div>

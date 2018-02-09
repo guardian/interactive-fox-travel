@@ -2,6 +2,16 @@
 @import "fonts";
 @import "palette";
 
+$red1: #cc0a11;
+$red2: #ff4e36;
+$blue1: #056da1;
+$blue2: #00b2ff;
+
+$exports:$red2;
+$goodsOut: #ff4e36;
+$imports: #056da1;
+$servicesOut:$blue2;
+
 // Uncomment for embeds
 //@import "embed";
 
@@ -11,4 +21,53 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+}
+.gv-interactive {
+
+    .gv-fulcrum {
+        font-size: larger;
+        left: 39%;
+        position: absolute;
+        margin-top: -10px;
+    }
+
+    .gv-trip-chart {
+
+
+        width: 100%;
+
+        .gv-chart-wrapper {
+            width:40%;
+            display: inline-block;
+        }
+
+
+        .gv-bar {
+            display: block;
+            height: 12px;
+
+            &.gv-imports {
+                background-color:$exports;
+                float: right;
+            }
+
+            &.gv-exports {
+                background-color:$imports;
+            }
+
+        }
+    }
+
+    .gv-trip {
+        margin-bottom: 30px;
+
+        h3 {
+            @include fs-headline(2);
+            font-weight: bolder;
+        }
+    
+    }
+    
+
+
 }
