@@ -12,6 +12,8 @@ var germany = {
 
 var domain = 150000;
 
+var ukworldtrade = 1100000;
+
 function getInclination(t) {
 	if (t.imports > t.exports) {
 		var angle = (((t.imports - t.exports) / (t.imports + t.exports)) * 45);
@@ -28,16 +30,18 @@ function getWidths(t){
 	t.iwidth = `${100 * (t.imports / domain)}%`
 	t.ewidth = `${100 * (t.exports / domain)}%`
 	t.inclination = getInclination(t)
+	t.proportion = (t.imports + t.exports) / ukworldtrade;
+	t.squareside = `${100 * Math.sqrt(t.proportion)}%`;
 }
 
 export async function render() {
 	var sheets = (await (axios.get(config.docDataUrl))).data.sheets;
 	var trips = sheets.trips;
-	console.log(trips)
 
 	trips.forEach(function(t){
 		getWidths(t);
 	})
+	console.log(trips)
 
 	var html = mustache.render(templateHTML,{'trips': trips})
 

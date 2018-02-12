@@ -33,15 +33,20 @@ $servicesOut:$blue2;
     .gv-context-chart {
         height:100px;
         width:100px;
+        position: relative;
 
         .gv-inner {
             background-color: $red1;
+            position: absolute;
+            bottom: 0;
         }
 
         .gv-outer {
             height: 100%;
             width: 100%;
-            background-color: grey;
+            background-color:#bebebe;
+            position: relative;
+            bottom: 0;
         }
     }
     
