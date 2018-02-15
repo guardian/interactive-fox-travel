@@ -34,6 +34,7 @@ function getWidths(t){
 	t.squareside = `${100 * Math.sqrt(t.proportion)}%`;
 	t.importsLabel = cleannumber(t.ukimports/1000) + "bn";
 	t.exportsLabel = cleannumber(t.ukexports/1000) + "bn";
+	t.roundtrip = cleannumber(t.onewaykm) * 2;
 }
 
 export async function render() {

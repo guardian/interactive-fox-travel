@@ -2,8 +2,14 @@
 	{{#trips}}
 	<div class="gv-trip">
 		<div class="gv-context-chart"><div class="gv-outer"><div class="gv-inner" style= "height:{{squareside}};width:{{squareside}}"></div></div></div>
+		{{#displayDate}}
+		<div class="gv-trip-details">
 		<div class="gv-date">{{displayDate}}</div>
-		<h3>{{country}}</h3>
+		<div class="gv-mileage">Estimated km: {{estimatedkm}} | Running total: {{cumulative}}</div>
+	</div>
+		{{/displayDate}}
+	
+		<h3 class="gv-country">{{country}}</h3>
 		<div class="gv-trip-chart-wrapper">
 			<div class="gv-trip-chart" data-angle={{inclination}}>
 				<div class="gv-chart-wrapper gv-left">
@@ -15,6 +21,8 @@
 			</div>
 		</div>
 		<div class="gv-reason">{{reason}}</div>
+		<div class="gv-notes">{{tradenotes}}</div>
+
 		<div class="gv-fulcrum"></div>
 	</div>
 	

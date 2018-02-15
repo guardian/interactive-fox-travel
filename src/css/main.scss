@@ -128,9 +128,13 @@ $servicesOut:$blue2;
         }
     }
 
-    .gv-trip {
-        margin-bottom: 24px;
+    .gv-trip-details {
         border-top: 1px dotted #dcdcdc;
+        margin-bottom: 20px;
+    }
+
+    .gv-trip {
+        margin-bottom: 12px;
         padding-top: 2px;
 
         h3 {
@@ -141,9 +145,29 @@ $servicesOut:$blue2;
     
     }
 
+    .gv-country {
+        padding-top: 2px;
+
+    }
+
+    .gv-country:before {
+        content:'';
+        width: 100px;
+        height:1px;
+        background: #aaa;
+        position: absolute;
+    }
+
+
     .gv-reason {
             // margin-left: 70px;
             margin-top: 12px;
+            @include fs-bodyCopy(2)
+    }
+
+    .gv-notes {
+        margin-top: 12px;
+        @include fs-bodyCopy(1)
     }
 
     .gv-date {

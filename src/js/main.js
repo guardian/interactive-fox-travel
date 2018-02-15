@@ -3,7 +3,7 @@ var el = document.createElement('script');
 el.src = process.env.PATH + '/app.js';
 document.body.appendChild(el);
 
-var charts = [].slice.apply(document.querySelectorAll('.gv-trip-chart'));
+//var charts = [].slice.apply(document.querySelectorAll('.gv-trip-chart'));
 
 // function wobble(c) {
 //     c.setAttribute("style", "transform:rotate(" + c.getAttribute("data-angle") + ")");
