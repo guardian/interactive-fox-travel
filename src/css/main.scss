@@ -31,12 +31,18 @@ $servicesOut:$blue2;
 .gv-interactive {
 
     .gv-context-chart {
-        height:100px;
-        width:100px;
+        height:50px;
+        width:50px;
         position: relative;
+        float: left;
+        display: none;
+        margin-right: 20px;
 
         .gv-inner {
-            background-color: $red1;
+            background-color: #f5be2c;
+            border-right: 2px solid #000;
+            border-top: 2px solid #000;
+            box-sizing: border-box;
             position: absolute;
             bottom: 0;
         }
@@ -44,7 +50,8 @@ $servicesOut:$blue2;
         .gv-outer {
             height: 100%;
             width: 100%;
-            background-color:#bebebe;
+            // background-color: #f6f6f6;
+            border: 2px solid #000;
             position: relative;
             bottom: 0;
         }
@@ -58,42 +65,91 @@ $servicesOut:$blue2;
     }
 
     .gv-trip-chart {
-
-
-        width: 100%;
-
+        // margin-left: 70px;
+        margin-top: 6px;
         .gv-chart-wrapper {
-            width:50%;
-            display: inline-block;
+            width:100%;
             margin: 0px;
+            // min-height: 100px;
+            height: 12px;
+            margin-bottom: 4px;
+            // margin-top: 2px;
+
+            &::before {
+                content: 'Imports';
+                float: left;
+                @include fs-textSans(1);
+                font-weight: bold;
+                color: #ff4e36;
+                margin-right: 5px;
+                // margin: 0;
+                display: inline-block;
+                width: 45px;
+            }
+
+            &.gv-wrapper--exports {
+                &::before {
+                    content: 'Exports';
+                    color: #056da1;
+                }
+            }
         }
 
 
         .gv-bar {
             display: block;
-            height: 12px;
+            height: 8px;
             margin: 0px;
-
+            border: 2px solid #000;
+            transform: translateY(2px);
+            // box-sizing: border-box;
             &.gv-imports {
                 background-color:$exports;
-                float: right;
+                float: left;
             }
 
             &.gv-exports {
                 background-color:$imports;
+                float: left;
+            }
+
+            &::after {
+                content: attr(data-label);
+                @include fs-textSans(1);
+                color: #333;
+                display: block;
+                width: 100px;
+                float: right;
+                margin-top: -3px;
+                transform: translateX(100%);
+                transform: translateX(calc(100% + 5px));
             }
 
         }
     }
 
     .gv-trip {
-        margin-bottom: 30px;
+        margin-bottom: 24px;
+        border-top: 1px dotted #dcdcdc;
+        padding-top: 2px;
 
         h3 {
             @include fs-headline(2);
-            font-weight: bolder;
+            // font-weight: bold;
+            margin-bottom: 0px;
         }
     
+    }
+
+    .gv-reason {
+            // margin-left: 70px;
+            margin-top: 12px;
+    }
+
+    .gv-date {
+        @include fs-header(2);
+        font-weight: bold;
+        margin-bottom: 0px;
     }
     
 

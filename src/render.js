@@ -32,6 +32,8 @@ function getWidths(t){
 	t.inclination = getInclination(t)
 	t.proportion = (t.imports + t.exports) / ukworldtrade;
 	t.squareside = `${100 * Math.sqrt(t.proportion)}%`;
+	t.importsLabel = cleannumber(t.ukimports/1000) + "bn";
+	t.exportsLabel = cleannumber(t.ukexports/1000) + "bn";
 }
 
 export async function render() {
