@@ -5,12 +5,13 @@
 		{{#displayDate}}
 		<div class="gv-trip-details">
 		<div class="gv-date">{{displayDate}}</div>
-		<div class="gv-mileage">Estimated km: {{estimatedkm}} | Running total: {{cumulative}}</div>
+		<div class="gv-mileage"><span class="gv-mileage-label">Estimated km:</span><span class="gv-mileage-value gv-mileage-left"> {{estimatedkm}} </span>  <span class="gv-mileage-label">Running total:</span><span class="gv-mileage-value"> {{cumulative}}</span></div>
 	</div>
 		{{/displayDate}}
-	
-		<h3 class="gv-country">{{country}}</h3>
+		<div class="gv-reason">{{reason}}</div>
 		<div class="gv-trip-chart-wrapper">
+				<h3 class="gv-country">{{country}}</h3>
+	
 			<div class="gv-trip-chart" data-angle={{inclination}}>
 				<div class="gv-chart-wrapper gv-left">
 					<div class="gv-bar gv-imports" style="width:{{iwidth}}" data-label="{{importsLabel}}"></div>
@@ -20,7 +21,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="gv-reason">{{reason}}</div>
 		<div class="gv-notes">{{tradenotes}}</div>
 
 		<div class="gv-fulcrum"></div>

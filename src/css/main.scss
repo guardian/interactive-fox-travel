@@ -1,15 +1,16 @@
 @import "mq";
 @import "fonts";
 @import "palette";
+@import "colours";
 
 $red1: #cc0a11;
 $red2: #ff4e36;
 $blue1: #056da1;
 $blue2: #00b2ff;
 
-$exports:$red2;
-$goodsOut: #ff4e36;
-$imports: #056da1;
+$exports: $news-garnett-main-1;
+$goodsOut: $news-garnett-main-1;
+$imports: $garnett-neutral-1;
 $servicesOut:$blue2;
 
 // Uncomment for embeds
@@ -23,39 +24,8 @@ $servicesOut:$blue2;
     margin: 0 !important;
 }
 
-.gv-trip-chart {
-    transition: transform 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
 
 .gv-interactive {
-
-    .gv-context-chart {
-        height:50px;
-        width:50px;
-        position: relative;
-        float: left;
-        display: none;
-        margin-right: 20px;
-
-        .gv-inner {
-            background-color: #f5be2c;
-            border-right: 2px solid #000;
-            border-top: 2px solid #000;
-            box-sizing: border-box;
-            position: absolute;
-            bottom: 0;
-        }
-
-        .gv-outer {
-            height: 100%;
-            width: 100%;
-            // background-color: #f6f6f6;
-            border: 2px solid #000;
-            position: relative;
-            bottom: 0;
-        }
-    }
     
     .gv-fulcrum {
         font-size: larger;
@@ -63,6 +33,7 @@ $servicesOut:$blue2;
         position: absolute;
         margin-top: -10px;
     }
+
 
     .gv-trip-chart {
         // margin-left: 70px;
@@ -80,7 +51,7 @@ $servicesOut:$blue2;
                 float: left;
                 @include fs-textSans(1);
                 font-weight: bold;
-                color: #ff4e36;
+                color: $imports;
                 margin-right: 5px;
                 // margin: 0;
                 display: inline-block;
@@ -90,7 +61,7 @@ $servicesOut:$blue2;
             &.gv-wrapper--exports {
                 &::before {
                     content: 'Exports';
-                    color: #056da1;
+                    color: $exports;
                 }
             }
         }
@@ -98,18 +69,18 @@ $servicesOut:$blue2;
 
         .gv-bar {
             display: block;
-            height: 8px;
+            height: 10px;
             margin: 0px;
-            border: 2px solid #000;
+//            border: 2px solid #000;
             transform: translateY(2px);
             // box-sizing: border-box;
             &.gv-imports {
-                background-color:$exports;
+                background-color:$imports;
                 float: left;
             }
 
             &.gv-exports {
-                background-color:$imports;
+                background-color:$exports;
                 float: left;
             }
 
@@ -129,7 +100,7 @@ $servicesOut:$blue2;
     }
 
     .gv-trip-details {
-        border-top: 1px dotted #dcdcdc;
+        border-top: 1px solid $garnett-neutral-4;
         margin-bottom: 20px;
     }
 
@@ -154,7 +125,7 @@ $servicesOut:$blue2;
         content:'';
         width: 100px;
         height:1px;
-        background: #aaa;
+     //   background: #aaa;
         position: absolute;
     }
 
@@ -162,20 +133,42 @@ $servicesOut:$blue2;
     .gv-reason {
             // margin-left: 70px;
             margin-top: 12px;
+            margin-bottom: 12px;
             @include fs-bodyCopy(2)
     }
 
     .gv-notes {
-        margin-top: 12px;
-        @include fs-bodyCopy(1)
+        margin-top: 22px;
+        @include fs-textSans(1)
     }
 
     .gv-date {
-        @include fs-header(2);
-        font-weight: bold;
-        margin-bottom: 0px;
-    }
+        @include fs-headline(2);
+//        font-weight: bold;
+        margin-bottom: 1em;
+           }
     
+    .gv-mileage {
+        @include fs-textSans(1);
+        border-bottom: 1px solid $garnett-neutral-4;
+    }
+
+    .gv-mileage-left {
+        padding-right: 40px;
+    }
+
+    .gv-mileage-left:after{
+        content:"|";
+        color: $garnett-neutral-4;
+        font-size: larger;
+        position: relative;
+        right: -20px;
+        bottom: -3px;
+    }
+
+    .gv-mileage-value {
+        font-weight: bolder;
+    }
 
 
 }
