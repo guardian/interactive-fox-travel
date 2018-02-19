@@ -56,6 +56,9 @@ $servicesOut:$blue2;
                 // margin: 0;
                 display: block;
                 width: 100%;
+                @include mq($from: tablet) {
+                    @include fs-textSans(3);
+                }
             }
 
             &.gv-wrapper--exports {
@@ -88,8 +91,9 @@ $servicesOut:$blue2;
             }
 
             &::after {
-                content: attr(data-label);
+                content: '£' attr(data-label);
                 @include fs-textSans(1);
+                font-weight: bold;
                 color: #333;
                 display: block;
                 width: 100px;
@@ -101,7 +105,7 @@ $servicesOut:$blue2;
 
             &.gv-major {
                     &::after {
-                        content: attr(data-label);
+                        content: '£'attr(data-label);
                         @include fs-textSans(1);
                         font-weight: bolder;
                         color:white;
@@ -158,17 +162,26 @@ $servicesOut:$blue2;
     .gv-notes {
         clear: both;
         margin-top: 32px;
+        @include mq($from: tablet) {
+            margin-top: 42px;
+        }
         @include fs-textSans(1)
     }
 
     .gv-date {
         @include fs-headline(2);
-//        font-weight: bold;
+        @include mq($from: tablet) {
+            @include fs-headline(3);
+        }
+       font-weight: 400;
         margin-bottom: 1em;
            }
     
     .gv-mileage {
         @include fs-textSans(1);
+        @include mq($from: tablet) {
+            @include fs-textSans(3);
+        }
         border-bottom: 1px solid $garnett-neutral-4;
     }
 
