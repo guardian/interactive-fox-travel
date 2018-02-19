@@ -14,10 +14,10 @@
 	
 			<div class="gv-trip-chart" data-angle={{inclination}}>
 				<div class="gv-chart-wrapper gv-left">
-					<div class="gv-bar gv-imports" style="width:{{iwidth}}" data-label="{{importsLabel}}"></div>
+					<div class="gv-bar gv-imports {{#major}}gv-major{{/major}}" style="width:{{iwidth}}" data-label="{{importsLabel}}"></div>
 				</div>
 				<div class="gv-chart-wrapper gv-wrapper--exports">
-					<div class="gv-bar gv-exports" style="width:{{ewidth}}" data-label="{{exportsLabel}}"></div>
+					<div class="gv-bar gv-exports {{#major}}gv-major{{/major}}" style="width:{{ewidth}}" data-label="{{exportsLabel}}"></div>
 				</div>
 			</div>
 		</div>

@@ -14,6 +14,8 @@ var domain = 150000;
 
 var ukworldtrade = 1100000;
 
+var keypartners = ['Germany','France','US','China','Netherlands']
+
 function getInclination(t) {
 	if (t.imports > t.exports) {
 		var angle = (((t.imports - t.exports) / (t.imports + t.exports)) * 45);
@@ -35,6 +37,7 @@ function getWidths(t){
 	t.importsLabel = cleannumber(t.ukimports/1000) + "bn";
 	t.exportsLabel = cleannumber(t.ukexports/1000) + "bn";
 	t.roundtrip = cleannumber(t.onewaykm) * 2;
+	t.major = keypartners.includes(t.country) ? true : false;
 }
 
 export async function render() {
@@ -44,7 +47,7 @@ export async function render() {
 	trips.forEach(function(t){
 		getWidths(t);
 	})
-	console.log(trips)
+	console.log(trips[0])
 
 	var html = mustache.render(templateHTML,{'trips': trips})
 

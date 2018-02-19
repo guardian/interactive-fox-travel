@@ -54,11 +54,12 @@ $servicesOut:$blue2;
                 color: $imports;
                 margin-right: 5px;
                 // margin: 0;
-                display: inline-block;
-                width: 45px;
+                display: block;
+                width: 100%;
             }
 
             &.gv-wrapper--exports {
+                margin-top: 20px;
                 &::before {
                     content: 'Exports';
                     color: $exports;
@@ -69,7 +70,7 @@ $servicesOut:$blue2;
 
         .gv-bar {
             display: block;
-            height: 10px;
+            height: 14px;
             margin: 0px;
 //            border: 2px solid #000;
             transform: translateY(2px);
@@ -78,6 +79,7 @@ $servicesOut:$blue2;
                 background-color:$imports;
                 float: left;
             }
+
 
             &.gv-exports {
                 background-color:$exports;
@@ -91,9 +93,24 @@ $servicesOut:$blue2;
                 display: block;
                 width: 100px;
                 float: right;
-                margin-top: -3px;
+                margin-top: 0px;
                 transform: translateX(100%);
                 transform: translateX(calc(100% + 5px));
+            }
+
+            &.gv-major {
+                    &::after {
+                        content: attr(data-label);
+                        @include fs-textSans(1);
+                        font-weight: bolder;
+                        color:white;
+                        display: block;
+                        width: 100px;
+                        float: left;
+                        margin-top: 0px;
+                        margin-left: 3px;
+                        transform: none;
+                    }
             }
 
         }
