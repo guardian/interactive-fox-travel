@@ -118,7 +118,7 @@ $servicesOut:$blue2;
 
     .gv-trip-details {
         border-top: 1px solid $garnett-neutral-4;
-        margin-bottom: 20px;
+        margin-top: 40px;
     }
 
     .gv-trip {
@@ -127,14 +127,14 @@ $servicesOut:$blue2;
 
         h3 {
             @include fs-headline(2);
-            // font-weight: bold;
+            font-weight: 400;
             margin-bottom: 0px;
         }
     
     }
 
     .gv-country {
-        padding-top: 2px;
+        padding-top: 14px;
 
     }
 
@@ -149,13 +149,14 @@ $servicesOut:$blue2;
 
     .gv-reason {
             // margin-left: 70px;
-            margin-top: 12px;
-            margin-bottom: 12px;
+            margin-top: 2px;
+            margin-bottom: 9px;
             @include fs-bodyCopy(1)
     }
 
     .gv-notes {
-        margin-top: 22px;
+        clear: both;
+        margin-top: 32px;
         @include fs-textSans(1)
     }
 
