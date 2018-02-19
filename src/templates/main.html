@@ -1,17 +1,27 @@
 <div class="gv-interactive">
 	{{#trips}}
 	<div class="gv-trip">
-		<div class="gv-context-chart"><div class="gv-outer"><div class="gv-inner" style= "height:{{squareside}};width:{{squareside}}"></div></div></div>
+		<div class="gv-context-chart">
+			<div class="gv-outer">
+				<div class="gv-inner" style="height:{{squareside}};width:{{squareside}}"></div>
+			</div>
+		</div>
 		{{#displayDate}}
 		<div class="gv-trip-details">
-		<div class="gv-date">{{displayDate}}</div>
-		<div class="gv-mileage"><span class="gv-mileage-label">Estimated km:</span><span class="gv-mileage-value gv-mileage-left"> {{estimatedkm}} </span>  <span class="gv-mileage-label">Running total:</span><span class="gv-mileage-value"> {{cumulative}}</span></div>
-	</div>
+			<div class="gv-date">{{displayDate}}</div>
+			<div class="gv-mileage">
+				<span class="gv-mileage-label">Estimated km:</span>
+				<span class="gv-mileage-value gv-mileage-left"> {{estimatedkm}} </span>
+				<span class="gv-mileage-label">Running total:</span>
+				<span class="gv-mileage-value"> {{cumulative}}</span>
+			</div>
+		</div>
 		{{/displayDate}}
 		<div class="gv-trip-chart-wrapper">
-				<h3 class="gv-country">{{country}}</h3>
-{{#reason}}				<div class="gv-reason">{{reason}}</div>{{/reason}}
-	
+			<h3 class="gv-country">{{country}}</h3>
+			{{#reason}}
+			<div class="gv-reason">{{reason}}</div>{{/reason}}
+
 			<div class="gv-trip-chart" data-angle={{inclination}}>
 				<div class="gv-chart-wrapper gv-left">
 					<div class="gv-bar gv-imports {{#major}}gv-major{{/major}}" style="width:{{iwidth}}" data-label="{{importsLabel}}"></div>
@@ -25,8 +35,15 @@
 
 		<div class="gv-fulcrum"></div>
 	</div>
-	
+
 
 	{{/trips}}
+
+	<div class="gv-total">
+		<div class="gv-total-label">Total distance travelled</div>
+		<div class="gv-total-value">435,840</div>
+		<span class="gv-total-unit">km</span>
+	</div>
+</div>
 
 </div>

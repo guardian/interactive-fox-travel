@@ -202,5 +202,35 @@ $servicesOut:$blue2;
         font-weight: bolder;
     }
 
+    .gv-total {
+        border-top: 1px solid $garnett-neutral-4;
+        margin-top: 70px;
+
+        .gv-total-label {
+            @include fs-textSans(1);
+            @include mq($from: tablet) {
+                @include fs-textSans(3);
+            }
+    
+        }
+
+        .gv-total-value,.gv-total-unit {
+            @include fs-headline(7);
+            @include mq($from: tablet) {
+                @include fs-headline(5);
+            }
+   
+
+            display: inline-block;
+        }
+
+        .gv-total-value {
+            color:  $news-garnett-main-1;
+        }
+        .gv-total-unit {
+            color: #333;
+        }
+    }
+
 
 }
