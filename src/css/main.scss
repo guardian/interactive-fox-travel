@@ -205,6 +205,7 @@ $servicesOut:$blue2;
     .gv-total {
         border-top: 1px solid $garnett-neutral-4;
         margin-top: 70px;
+        margin-bottom: 70px;
 
         .gv-total-label {
             @include fs-textSans(1);
@@ -218,6 +219,7 @@ $servicesOut:$blue2;
             @include fs-headline(7);
             @include mq($from: tablet) {
                 @include fs-headline(5);
+                font-size: 36px;
             }
    
 
